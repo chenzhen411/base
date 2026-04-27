@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>英雄坛说·完整复刻版（移动）</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header>
+        <h1>英雄坛说·完整复刻版</h1>
+        <p>移动端像素 RPG（门派 / 任务 / 装备 / 存档）</p>
+      </header>
+
+      <section class="hud">
+        <div>地点：<span id="location">平安镇</span></div>
+        <div>门派：<span id="faction">无门派</span></div>
+        <div>等级：<span id="level">1</span></div>
+        <div>HP：<span id="hp">50</span>/<span id="maxHp">50</span></div>
+        <div>MP：<span id="mp">20</span>/<span id="maxMp">20</span></div>
+        <div>银两：<span id="gold">50</span></div>
+      </section>
+
+      <canvas id="game" width="384" height="384" aria-label="游戏画面"></canvas>
+
+      <section id="messagePanel" class="panel">
+        <p id="messageText">欢迎踏入江湖。</p>
+      </section>
+
+      <section id="dialog" class="dialog hidden">
+        <p id="dialogTitle"></p>
+        <p id="dialogText"></p>
+        <div class="dialog-actions">
+          <button id="dialogBtn">继续</button>
+          <button id="dialogCancelBtn">关闭</button>
+        </div>
+      </section>
+
+      <section id="battlePanel" class="battle hidden">
+        <h2>战斗</h2>
+        <p id="enemyInfo"></p>
+        <p id="battleLog"></p>
+        <div class="battle-actions">
+          <button id="attackBtn">普攻</button>
+          <button id="skillBtn">武功</button>
+          <button id="itemBtn">用药</button>
+          <button id="fleeBtn">逃跑</button>
+        </div>
+      </section>
+
+      <section class="quick-actions">
+        <button id="interactBtn">交互</button>
+        <button id="restBtn">打坐</button>
+        <button id="inventoryBtn">背包</button>
+        <button id="questBtn">任务</button>
+        <button id="saveBtn">存档</button>
+        <button id="loadBtn">读档</button>
+      </section>
+
+      <section id="sidePanel" class="panel hidden">
+        <h3 id="sidePanelTitle">信息</h3>
+        <pre id="sidePanelContent"></pre>
+        <button id="sidePanelClose">关闭</button>
+      </section>
+
+      <section class="controls" aria-label="触屏控制区">
+        <div class="dpad">
+          <button data-dir="up">↑</button>
+          <button data-dir="left">←</button>
+          <button data-dir="down">↓</button>
+          <button data-dir="right">→</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
